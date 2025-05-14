@@ -19,6 +19,8 @@ LANGUAGE_OPTIONS = {
     "French": "fr-FR",
     "Spanish": "es-ES",
     "Arabic (Saudi Arabia)": "ar-SA",
+    "korean": "ko-KR",
+    "japanese": "ja-JP",
 }
 
 # Initialize recognizer
@@ -27,7 +29,7 @@ r = sr.Recognizer()
 def transcribe_speech(api_choice="google", language="en-US"):
     with sr.Microphone() as source:
         st.info("Speak now... (click Pause to stop)")
-        audio_text = r.listen(source, phrase_time_limit=10)
+        audio_text = r.listen(source, phrase_time_limit=15)
         st.info("Transcribing...")
 
     try:
